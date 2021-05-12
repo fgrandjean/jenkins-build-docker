@@ -14,7 +14,7 @@ node{
 
         sh 'docker ps | grep srv-web'
 
-        sh 'url=$(docker inspect -f '{{ .NetworkSettings.IPAddress }}' srv-web):800 && curl $url'
+        sh 'curl "$(docker inspect -f '{{ .NetworkSettings.IPAddress }}' srv-web):800"'
 
     }
 
