@@ -13,8 +13,8 @@ node{
         docker.image('srv-web').withRun('-p 800:80') { c ->
 
         sh 'docker ps | grep srv-web'
-
-        sh 'curl "$(docker inspect -f '{{ .NetworkSettings.IPAddress }}' srv-web):800"'
+          
+        sh 'curl "$(docker inspect -f \'{{ .NetworkSettings.IPAddress }}\' srv-web):800"'
 
     }
 
